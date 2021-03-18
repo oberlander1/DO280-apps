@@ -1,0 +1,177 @@
+    1  exit
+    2  ssh lab@utility
+    3  sudo shutdown -h now
+    4  ls
+    5  ssh lab@utility
+    6  ls
+    7  sudo su -
+    8  exit
+    9  . /usr/local/etc/ocp4.defaults 
+   10  lab execute-troubleshoot start
+   11  oc login -u kubeadmin -p ${RHT_OCP4_KUBEADM_PASSWORD} ${RHT_OCP4_MASTER_API} 
+   12  env | grep RHT
+   13  source /usr/local/etc/ocp4.config 
+   14  env | grep RHT
+   15  cat /usr/local/etc/ocp4.config 
+   16  . /usr/local/etc/ocp4.config 
+   17  env | grep RHT
+   18  RHT_OCP4_MASTER_API=https://api.ocp4.example.com:6443
+   19  RHT_OCP4_WILDCARD_DOMAIN=apps.ocp4.example.com
+   20  RHT_OCP4_KUBEADM_PASSWD=nIMBQ-ZoYZ5-UyS5D-oGTjF
+   21  RHT_OCP4_USER_PASSWD=redhat
+   22  env | grep RHT
+   23  export RHT_OCP4_USER_PASSWD=redhat
+   24  env | grep RHT
+   25  vim /usr/local/etc/ocp4.config 
+   26  cp /usr/local/etc/ocp4.config 
+   27  cp /usr/local/etc/ocp4.config ./
+   28  vim ocp4.config 
+   29  source ./ocp4.config 
+   30  export RHT_OCP4_USER_PASSWD=redhat
+   31  env | grep RHT
+   32  oc login -u kubeadmin -p ${RHT_OCP4_KUBEADM_PASSWORD} ${RHT_OCP4_MASTER_API} 
+   33  cat ocp4.config >> .bash_profile 
+   34  id
+   35  su - student
+   36  exit
+   37  env
+   38  env | grep RHT
+   39  cat .bash_profile 
+   40  cat ocp4.config >> .bashrc
+   41  env | grep RHT
+   42  exit
+   43  env
+   44  env | grep RHT
+   45  lab execute-troubleshoot start
+   46  lab execute-troubleshoot finish
+   47  lab execute-troubleshoot start
+   48  env
+   49  oc login -u kubeadmin -p ${RHT_OCP4_KUBEADM_PASSWORD} ${RHT_OCP4_MASTER_API} 
+   50  cat ocp4.config 
+   51  oc login -u kubeadmin
+   52  oc get nodes
+   53  oc descibe nodes
+   54  oc describe nodes
+   55  oc adm top nodel -l
+   56  oc adm top node
+   57  oc adm top node -l node-role.kubernetes.io/worker
+   58  oc describe node master01
+   59  oc project execute-troubleshoot
+   60  oc status
+   61  oc get events
+   62  skopeo inspect registry.access.redhat.com/rhscl/postgresq-96-rhel7:1
+   63  skopeo inspect docker://registry.access.redhat.com/rhscl/postgresq-96-rhel7:1
+   64  skopeo inspect docker://registry.access.redhat.com/rhscl/postgresql-96-rhel7:1
+   65  oc get deployments/psql -o yaml
+   66  oc get deployments/psql -o yaml | grep image
+   67  oc get deployments/psql -o yaml | grep image:
+   68  oc edit deployments/psql
+   69  oc get deployments/psql -o yaml
+   70  oc get deployments/psql -o yaml | grep image:
+   71  oc get pods
+   72  oc get deployments/psql -o yaml | grep image:
+   73  oc get pods
+   74  oc get deployments/psql -o yaml
+   75  oc get pods
+   76  oc get deployments/psql -o yaml
+   77  curl -k -XGET
+   78  oc whoami -t
+   79  oc get clusteroperators
+   80  oc describe clusteroperators authentications
+   81  oc describe clusteroperators authentication
+   82  oc describe clusteroperators authentication | less
+   83  ex explain oauth
+   84  oc explain oauth
+   85  oc explain oauth | less
+   86  oc explain networkpolicy
+   87  oc explain egressnetworkpolicy
+   88  oc get oauth
+   89  oc describe oauth
+   90  oc describe oauths
+   91  oc explain pod
+   92  oc explain oauth
+   93  oc explain oauth.spec
+   94  oc explain egressnetworkpolicy
+   95  oc explain egressnetworkpolicy.spec
+   96  oc explain egressnetworkpolicy.spec.egress
+   97  oc explain egressnetworkpolicy.spec.egress.type
+   98  oc explain egressnetworkpolicy.spec.egress.to
+   99  oc explain egressnetworkpolicy.metadata
+  100  oc explain egressnetworkpolicy.metadata | less
+  101  pwd
+  102  cd inst
+  103  ls
+  104  cd DO280/
+  105  ls
+  106  cd labs/
+  107  ls
+  108  cd.
+  109  ls
+  110  cd
+  111  oc get users
+  112  oc get identities
+  113  oc admin
+  114  oc adm policy
+  115  lab auth-provider start
+  116  env
+  117  source /usr/local/etc/ocp4.config 
+  118  env | grep RHT
+  119  htpasswd -c -B -b ./DO280/labs/auth-provider/temp admin
+  120  echo ${RHT_OCP4_USER_PASSWD} 
+  121  oc describe egressnetworkpolicy.spec
+  122  oc describe egressnetworkpolicy
+  123  oc explain egressnetworkpolicy
+  124  oc explain egressnetworkpolicy.spec
+  125  oc explain egressnetworkpolicy.spec.egress
+  126  oc explain egressnetworkpolicy.spec.egress.to
+  127  htpasswd -c -B -b ./DO280/labs/auth-provider/temp admin ${RHT_OCP4_USER_PASSWD} 
+  128  htpasswd -c -B -b ./DO280/labs/auth-provider/temp developer ${RHT_OCP4_USER_PASSWD} 
+  129  oc explain egressnetworkpolicy.spec.egress.to login
+  130  oc login -u kubeadmin -p ${RHT_OCP4_KUBEADM_PASSWD} ${RHT_OCP4_MASTER_API} 
+  131  cat DO280/labs/auth-provider/temp 
+  132  htpasswd  -b ./DO280/labs/auth-provider/temp admin ${RHT_OCP4_USER_PASSWD} 
+  133  rm DO280/labs/auth-provider/temp 
+  134  htpasswd -c -B -b ./DO280/labs/auth-provider/temp admin ${RHT_OCP4_USER_PASSWD} 
+  135  htpasswd  -b ./DO280/labs/auth-provider/temp developer ${RHT_OCP4_USER_PASSWD} 
+  136  oc login -u kubeadmin -p ${RHT_OCP4_KUBEADM_PASSWD} ${RHT_OCP4_MASTER_API} 
+  137  oc project default
+  138  oc create secret generic htp-secret --from-file=htpasswd=/home/student/DO280/labs/auth-provider/temp -n openshift-config
+  139  oc adm policy add-cluster-role-to-user cluster-admin admin
+  140  cat DO280/labs/auth-provider/temp 
+  141  oc adm policy add-cluster-role-to-user cluster-admin admin
+  142  oc get -o yaml oauth cluster > ./DO280/labs/auth-provider/oauth.yaml
+  143  vim DO280/labs/auth-provider/oauth.yaml 
+  144  oc replace -f ./DO280/labs/auth-provider/oauth.yaml 
+  145  vim DO280/labs/auth-provider/oauth.yaml 
+  146  oc replace -f ./DO280/labs/auth-provider/oauth.yaml 
+  147  oc get cluster-operators authentication
+  148  oc get clusteroperators authentication
+  149  oc login -u admin -p redhat
+  150  oc get nodes
+  151  oc login -u developer -p admin
+  152  oc login -u developer -p redhat
+  153  oc get nodes
+  154  history > ./DO280-history.txt
+  155  oc login -u admin -p redhat
+  156  oc get users
+  157  oc get identies
+  158  oc get identities
+  159  htpasswd -b ./DO280/labs/auth-provider/temp manager ${RHT_OCP4_USER_PASSWD} 
+  160  oc create secret generic htp-secret --from-file=htpasswd=/home/student/DO280/labs/auth-provider/temp --dry-run -o yaml
+  161  oc create secret generic htp-secret --from-file=htpasswd=/home/student/DO280/labs/auth-provider/temp --dry-run -o yaml |  oc replace -n openshift-config -f -
+  162  oc get clusteroperators auth
+  163  oc get clusteroperators authentication
+  164  oc login -u manager -p redhat
+  165  oc get nodes
+  166  oc new-project auth-provider
+  167  exit
+  168  oc login -u developer -p redhat
+  169  oc delete project auth-provider
+  170  oc login -u admin -p redhat
+  171  oc extract secrets/htp-secret -n openshift-config --to - > ./DO280/labs/auth-provider/temp 
+  172  openssl rand -hex 15
+  173  MANAGER_PASSWD=c9093b63594d8646a532b424f5967d
+  174  htpasswd -b ./DO280/labs/auth-provider/temp manager ${MANAGER_PASSWD} 
+  175  oc create secret generic htp-secret --from-file=htpasswd=/home/student/DO280/labs/auth-provider/temp --dry-run -o yaml |  oc replace -n openshift-config -f -
+  176  oc get clusteroperators authentication
+  177  history > ./DO280-history.txt
