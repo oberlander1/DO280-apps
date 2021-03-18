@@ -175,3 +175,153 @@
   175  oc create secret generic htp-secret --from-file=htpasswd=/home/student/DO280/labs/auth-provider/temp --dry-run -o yaml |  oc replace -n openshift-config -f -
   176  oc get clusteroperators authentication
   177  history > ./DO280-history.txt
+  178  oc delete identity myusers:manager
+  179  oc delete user manager
+  180  oc get clusteroperators authentication
+  181  oc get users
+  182  oc login -u manager -p redhat
+  183  oc login -u kubeadmin -p ${RHT_OCP4_KUBEADM_PASSWD} 
+  184  oc delete project auth-provider
+  185  oc delete users --all
+  186  oc delete identities -all
+  187  oc delete identities --all
+  188  lab auth-provider finish
+  189  oc get cluserroles
+  190  oc get clusterroles
+  191  oc get clusterroles | head -n15
+  192  oc get clusterroles admin
+  193  oc describe clusterroles admin
+  194  history | grep sk
+  195  oc get policy
+  196  ls
+  197  source ./ocp4.config 
+  198  oc get policy login
+  199  oc login -u kubeadmin -p ${RHT_OCP4_KUBEADM_PASSWD} 
+  200  oc get policy
+  201  oc get serviceaccounts
+  202  oc get rolebindings
+  203  lab authorization-rbac start
+  204  cd
+  205  exit
+  206  lab authorization-rbac starrrrrrrrrt
+  207  lab authorization-rbac start
+  208  history | grep login
+  209  oc login -u admin -p redhat
+  210  lab authorization-rbac starty
+  211  lab authorization-rbac start
+  212  lsss
+  213  lssssssss
+  214  ls
+  215  cd DO280/
+  216  ls
+  217  cd      labs/
+  218  ls
+  219  cd
+  220  hisory | grep
+  221  cd /usr/local/lib
+  222  ls
+  223  lab  auth-rbac start
+  224  history | grep login
+  225  oc login -u admin -p redhat
+  226  oc get clusterrolebinding -o wide
+  227  oc get clusterrolebinding -o wide | grep -E 'NAME|self'
+  228  oc get clusterrolebinding -o wide | grep -E 'NAME|self-provisioner'
+  229  oc describe custerrolebindings self-provisioners
+  230  oc describe custerrolebinding self-provisioners
+  231  oc get clusterrolebinding -o wide | grep -E 'NAME|self-provisioner'
+  232  oc describe custerrolebinding self-provisioners
+  233  oc describe custerrolebinding self-provisioner
+  234  oc describe clusterrolebinding self-provisioner
+  235  oc adm policy remove-cluster-role-from-group self-provisioner system:authenticated:oauth
+  236  oc describe clusterrolebinding self-provisioner
+  237  oc login -u leader -p redhat
+  238  oc new-project test
+  239  oc login -u admin -p redhat
+  240  oc new-project authorization-rbac
+  241  oc policy add-role-to-user admin leader -n authorization-rbac
+  242  oc adm groups new dev-group
+  243  oc adm groups add-users dev-group developeer
+  244  oc adm groups new qa-group
+  245  oc adm groups add-users qa-group qa-engineer
+  246  oc get groups
+  247  oc login -u leader -p redhat
+  248  oc policy add-role-to-group edit dev-group -n authorization-rbac
+  249  oc policy add-role-to-group view qa-group -n authorization-rbac
+  250  oc get rolebindings -o wide
+  251  oc login -u developer -p redhat
+  252  oc login -u developer -p developerrrrrrrrrrrrrrrrrrrrrrrrr
+  253  oc login -u developer -p developer
+  254  oc new-app --name httpd httpd:2.4
+  255  oc use projectr auth-rbac
+  256  oc use project auth-rbac
+  257  oc project auth-rbac
+  258  oc new-project auth-rbac
+  259  oc login -u admin -p redhat
+  260  oc adm policy add-cluster-role-to-group --rolebinding-name self-provisioners self-provisioner system:authenticated:oauth
+  261  lab auth-rbac finish
+  262  lab auth-review start
+  263  history | grep htpasswd
+  264  cd
+  265  vim DO280/labs/auth-review/tmp_users 
+  266  htpasswd 
+  267  history | grep htpasswd
+  268  htpasswd ./DO280/labs/auth-review/tmp_users tester 'L@bR3v!ew'
+  269  htpasswd ./DO280/labs/auth-review/tmp_users tester 
+  270  htpasswd ./DO280/labs/auth-review/tmp_users leader 
+  271  htpasswd ./DO280/labs/auth-review/tmp_users admin 
+  272  htpasswd ./DO280/labs/auth-review/tmp_users developer
+  273  cat DO280/labs/auth-review/tmp_user
+  274  oc login -u kubeadmin -p redhhhhhhhhhhhhhhat
+  275  history | grep login
+  276  oc login -u kubeadmin -p ${RHT_OCP4_KUBEADM_PASSWD} ${RHT_OCP4_MASTER_API} 
+  277  history | grep oauth
+  278  history | grep auth
+  279  history | grep htpasswd
+  280  oc create secret generic htp-secret --from-file=htpasswd=/home/student/DO280/labs/auth-review/tmp_users 
+  281  oc create secret generic htp-secret --from-file=htpasswd=/home/student/DO280/labs/auth-review/tmp_users -n openshift----config
+  282  oc create secret generic htp-secret --from-file=htpasswd=/home/student/DO280/labs/auth-review/tmp_users -n openshift-config
+  283  oc get secret -n default
+  284  oc delete secret htp-secret -n default
+  285  oc get secret -n openshift-config
+  286  oc login -u admin
+  287  oc create secret generic htp-secret --from-file=htpasswd=/home/student/DO280/labs/auth-review/tmp_users 
+  288  oc login -u admin
+  289  oc get users
+  290  oc get user
+  291  oc list user
+  292  history | grep user
+  293  oc get users
+  294  oc create user
+  295  oc create user --from-file=htpasswd=/home/student/DO280/labs/auth-review/tmp_users
+  296  oc get secret -n openshift-config
+  297  oc gert oauth cluster -o yaml > ./DO280/labs/auth-review/oauth.yaml
+  298  oc ger oauth cluster -o yaml > ./DO280/labs/auth-review/oauth.yaml
+  299  oc get oauth cluster -o yaml > ./DO280/labs/auth-review/oauth.yaml
+  300  cat DO280/labs/auth-review/oauth.yaml 
+  301  vim DO280/labs/auth-review/oauth.yaml 
+  302  oc delete secret htp-secret -n default
+  303  oc delete secret htp-secret -n openshift-config
+  304  oc create secret generic auth-reeeviiiew --from-file=htpasswd=/home/student/DO280/labs/auth-review/tmp_users -n openshift-config
+  305  oc delete secret auth-reeeviiiew -n openshift-config
+  306  oc create secret generic auth-review --from-file=htpasswd=/home/student/DO280/labs/auth-review/tmp_users -n openshift-config
+  307  oc apply -f ./DO280/labs/auth-review/oauth.yaml 
+  308  oc get users
+  309  oc login -u admin
+  310  oc replace -f ./DO280/labs/auth-review/oauth.yaml 
+  311  oc          get pods -n openshift-authentication
+  312  oc delete -f ./DO280/labs/auth-review/oauth.yaml 
+  313  oc login -u kubeadmin -p redhat
+  314  source ./ocp4.config 
+  315   clone https://github.com/oberlander1/DO280-apps
+  316  git checkout https://github.com/oberlander1/DO280-apps
+  317  git remote add origin https://github.com/oberlander1/DO280-apps
+  318  git push -u origin master
+  319  git add .
+  320  git push -u origin master
+  321  git remote add origin https://github.com/oberlander1/DO280-apps
+  322  git push -u origin master
+  323  git add -A
+  324  git commit -m "DO280"
+  325  git remote add origin https://github.com/oberlander1/DO280-apps
+  326  git push -u -f origin master
+  327  history > DO280-history.txt
